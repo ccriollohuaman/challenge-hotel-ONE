@@ -138,7 +138,7 @@ public class Login extends JFrame {
 		JLabel labelTitulo = new JLabel("INICIAR SESIÓN");
 		labelTitulo.setForeground(SystemColor.textHighlight);
 		labelTitulo.setFont(new Font("Roboto Black", Font.PLAIN, 26));
-		labelTitulo.setBounds(65, 149, 202, 26);
+		labelTitulo.setBounds(65, 149, 204, 26);
 		panel.add(labelTitulo);
 		
 		JSeparator separator_1 = new JSeparator();
