@@ -1,4 +1,4 @@
-package views;
+package jdbc.views;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
