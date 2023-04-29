@@ -96,7 +96,7 @@ public class RegistroHuesped extends JFrame {
 		btnAtras.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ReservasView reservas = new ReservasView();
+				RegistroReserva reservas = new RegistroReserva();
 				reservas.setVisible(true);
 				dispose();				
 			}
