@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Panel;
 import java.awt.Color;
 import java.awt.SystemColor;
@@ -28,6 +29,7 @@ public class MenuPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public MenuPrincipal() {
+		
 		setIconImage(Toolkit.getDefaultToolkit().getImage(MenuPrincipal.class.getResource("/imagenes/aH-40px.png")));
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 910, 537);
@@ -61,8 +63,8 @@ public class MenuPrincipal extends JFrame {
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 
-		JLabel lblCopyR = new JLabel("Desarrollado por Fulanita de Tal © 2023");
-		lblCopyR.setBounds(315, 11, 284, 19);
+		JLabel lblCopyR = new JLabel("Desarrollado por Cristhian Criollo con código base de Alura - ONE © 2023");
+		lblCopyR.setBounds(194, 11, 521, 21);
 		lblCopyR.setForeground(new Color(240, 248, 255));
 		lblCopyR.setFont(new Font("Roboto", Font.PLAIN, 16));
 		panel_1.add(lblCopyR);
@@ -91,11 +93,13 @@ public class MenuPrincipal extends JFrame {
 		JPanel btnexit = new JPanel();
 		btnexit.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				int option = JOptionPane.showConfirmDialog(null,
-						"¿Estás seguro de que quieres cerrar la aplicación?",
-						"Confirmar cierre", JOptionPane.YES_NO_OPTION);
-				if (option == JOptionPane.YES_OPTION) {
+			public void mouseClicked(MouseEvent e) {	
+				Object[] opciones = {"Sí", "No"};
+				int opcion = JOptionPane.showOptionDialog(null, 
+						"<html><div style='text-align: center;'>¿Estas seguro que quieres cerrar la aplicación?</div></html>", 
+						"Confirmación", JOptionPane.YES_NO_OPTION,
+						JOptionPane.PLAIN_MESSAGE, null, opciones, opciones[0]);
+				if (opcion == JOptionPane.YES_OPTION) {
 					System.exit(0);
 				}
 			}
