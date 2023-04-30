@@ -165,8 +165,16 @@ public class Sistema {
 ```
 ### Demostración
 
+* Login, generación de id de reserva y guardado de los datos del huésped
+
 ![challenge_hotel_reserva](https://user-images.githubusercontent.com/83378496/235373322-f08ab1c9-cc4c-4b96-ab36-5067f570361d.gif)
+
+* Búsqueda, edición o eliminación de registros
+
 ![challenge_hotel_busqueda](https://user-images.githubusercontent.com/83378496/235373316-2e02cc63-a9dd-4288-8fe5-75157e54008b.gif)
+
+* Creación de nuevos usuarios y vista de un usuario con perfil tipo "Agente"
+
 ![challenge_hotel_administracion](https://user-images.githubusercontent.com/83378496/235373320-790e925d-d764-4e27-a5e2-41e0b25d0606.gif)
 
 
