@@ -163,8 +163,11 @@ public class Sistema {
 	
 }
 ```
-### Video demostrativo
+### Demostración
 
+![challenge_hotel_reserva](https://user-images.githubusercontent.com/83378496/235373322-f08ab1c9-cc4c-4b96-ab36-5067f570361d.gif)
+![challenge_hotel_busqueda](https://user-images.githubusercontent.com/83378496/235373316-2e02cc63-a9dd-4288-8fe5-75157e54008b.gif)
+![challenge_hotel_administracion](https://user-images.githubusercontent.com/83378496/235373320-790e925d-d764-4e27-a5e2-41e0b25d0606.gif)
 
 
 ## Librerías externas utilizadas
