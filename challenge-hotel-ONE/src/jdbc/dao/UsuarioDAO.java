@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import jdbc.exception.UsuarioExistenteException;
 import jdbc.model.Usuario;
 import jdbc.test.ContadorConexiones;
 
@@ -19,7 +20,7 @@ public class UsuarioDAO {
 		this.conexion = new ContadorConexiones();
 	}
 
-	public void guardar(Usuario usuario) {
+	public void guardar(Usuario usuario) throws UsuarioExistenteException {
 		try {
 			conexion.increment();
 			final PreparedStatement statement = con.prepareStatement(
@@ -45,7 +46,21 @@ public class UsuarioDAO {
 				}
 			}
 		} catch (SQLException e) {
-
+			if (e.getErrorCode() == 1062) {
+				String campoDuplicado = null;
+				if (e.getMessage().contains("usuario.dni")) {
+					campoDuplicado = "DNI";
+				} else if (e.getMessage().contains("usuario.usuario")) {
+					campoDuplicado = "USUARIO";
+				}
+				if (campoDuplicado != null) {
+					throw new UsuarioExistenteException(campoDuplicado, usuario.getValorCampo(campoDuplicado).toString());
+				} else {
+					throw new RuntimeException(e);
+				}
+			} else {
+				throw new RuntimeException(e);
+			}
 		} finally {
 			conexion.decrement();
 		}

@@ -1,8 +1,10 @@
 package jdbc.controller;
 
 import jdbc.dao.UsuarioDAO;
+import jdbc.exception.UsuarioExistenteException;
 import jdbc.factory.ConnectionFactory;
 import jdbc.model.Usuario;
+
 
 public class UsuarioController {
 
@@ -13,7 +15,7 @@ public class UsuarioController {
 		this.usuarioDAO = new UsuarioDAO(factory.recuperaConexion());
 	}
 	
-	public void guardar(Usuario usuario) {
+	public void guardar(Usuario usuario) throws UsuarioExistenteException{
 		usuarioDAO.guardar(usuario);
 	}
 	
