@@ -1,4 +1,8 @@
-# Directorio de reservaciones para un hotel
+# Directorio de Reservar para un hotel | Challenge | BackEnd
+
+<p align="center" >
+     <img width="300" heigth="300" src="https://user-images.githubusercontent.com/91544872/189419040-c093db78-c970-4960-8aca-ffcc11f7ffaf.png">
+</p>
 
 ## Descripción
 Challenge de Alura Latam - Programa ONE donde se crea un aplicación para la gestión de reservaciones de un hotel.
@@ -13,7 +17,7 @@ Challenge de Alura Latam - Programa ONE donde se crea un aplicación para la ges
 
 ## Explicación del Desarrollo
 
-## Base de Datos
+### Base de Datos
 
 - Se trabaja con una base de datos denominada "hotel_alura" gestionada por MySQL, donde se tiene tres tablas: "usuario", "reserva" y "huesped", estás dos últimas están relacionadas por el id de la tabla reserva.
 - Al crear la tabla usuario también se inserta un usuario de tipo administrador que sería el que permitirá ingresar a la aplicación y crear nuevos usuarios.
@@ -62,9 +66,10 @@ FOREIGN KEY(reserva_id) REFERENCES reserva(id)
 )ENGINE=InnoDB;
 ```
 
-## Ventanas
+### Ventanas
 
--A nivel visual se cuenta con 7 ventanas.
+- A nivel visual se cuenta con 9 ventanas.
+- Las ventanas MenuPrincipal, Login, MenuUsuario, RegistroReserva, RegistroHuesped, Exito y Busqueda fueron obtenidas desde el [Código base](https://github.com/alura-challenges/challenge-one-alura-hotel-latam) generado por Alura
 
 1. MenuPrincipal: Es la ventana que se muestra al ejecutarse la aplicación, tiene un botón que redigire a la ventana Login.
 2. Login: Ventana que tiene un autenticador por usuario y contraseña y abre la ventana MenuUsuario.
@@ -76,9 +81,9 @@ FOREIGN KEY(reserva_id) REFERENCES reserva(id)
 8. Busqueda: Esta ventana permite buscar, editar o eliminar los registros.
 9. Administrador: Se muestra un formulario para crear nuevos usuarios.
 
-## Lógica
+### Lógica
 
--Se desarrolló utilizando JDBC y siguiendo la estructura vista, modelo, controlador, DAO, common y factory.
+- Se desarrolló utilizando JDBC y siguiendo la estructura vista, modelo, controlador, DAO, common y factory.
 
 1. En el paquete factory se hace la conexión usando ComboPooledDataSource para mejorar el rendimiento y escalabilidad de la aplicación ya que se proporciona un conjunto de conexiones de bases de datos.
 
@@ -109,6 +114,7 @@ public class ConnectionFactory {
 ```
 
 2. En el paquete modelo se tiene los objetos que replican la estructura de las tablas creadas en la base de datos: Usuario, Reserva y Huesped.
+
 - En Usuario se creó una función especial que encripta las contraseñas con SHA-256
 
 ```java
@@ -124,7 +130,7 @@ MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
 4. En el paquete controller manejamos la lógica para realizar las operaciones entre las ventanas y las clases DAO
 
--ReservaController: Aquí se tiene la regla para calcular el valor de la reserva de acuerdo a las fechas seleccionadas por el cliente. Por defecto el valor de la reserva por día es $25.99.
+- ReservaController: Aquí se tiene la regla para calcular el valor de la reserva de acuerdo a las fechas seleccionadas por el cliente. Por defecto el valor de la reserva por día es $25.99.
 
 ```java
 public String calcularValorReserva(Date fechaEntrada, Date fechaSalida) {
@@ -136,7 +142,7 @@ public String calcularValorReserva(Date fechaEntrada, Date fechaSalida) {
 }
 ```
 
--LoginController: Aquí se maneja las operaciones para cuando el cliente ingresa su usuario y contraseña luego de enviar la información al DAO se sobreescribe con Arrays.fill lo guardado en la variable char[] para aumentar la complejidad de recuperar la contraseña ingresada para terceros.
+- LoginController: Aquí se maneja las operaciones para cuando el cliente ingresa su usuario y contraseña luego de enviar la información al DAO se sobreescribe con Arrays.fill lo guardado en la variable char[] para aumentar la complejidad de recuperar la contraseña ingresada para terceros.
 
 ```java
 public Usuario autentica(String usuario, char[] contrasena) {
@@ -146,7 +152,18 @@ public Usuario autentica(String usuario, char[] contrasena) {
 }
 ```
 
-## Video demostrativo
+5. En el paquete common se tiene subpaquetes con funciones comunes para el programa
+
+- El subpaquete vstatic tiene la clase Sistema que guarda variables estáticas, ahora solo cuenta con una que sirve para almacenar el tipo de usuario autenticado en Login que permite al cliente navegar por la aplicación mostrando botones que le corresponden a su tipo.
+
+```java
+public class Sistema {
+
+    public static Usuario usuarioAutenticado;
+	
+}
+```
+### Video demostrativo
 
 
 
@@ -165,5 +182,5 @@ public Usuario autentica(String usuario, char[] contrasena) {
 ## Lenguaje utilizado 
 * [Java 19](https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html)
 
-### Desarrollador
+## Desarrollador
 [<img src="https://avatars.githubusercontent.com/u/83378496?v=4" width=90><br><sub>Cristhian Criollo</sub>](https://github.com/ccriollohuaman)
