@@ -30,6 +30,7 @@ public class MenuUsuario extends JFrame {
 	private JLabel labelExit;
 	private JLabel labelRegistro;
 	private Usuario usuario;
+	private JLabel lblNewLabel_3_3;
 
 	/**
 	 * Create the frame.
@@ -191,7 +192,9 @@ public class MenuUsuario extends JFrame {
 						"Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, opciones,
 						opciones[0]);
 				if (opcion == JOptionPane.YES_OPTION) {
-					System.exit(0);
+					Login login = new Login();
+					login.setVisible(true);
+					dispose();
 				}
 			}
 
@@ -272,6 +275,14 @@ public class MenuUsuario extends JFrame {
 		lblNewLabel_3_2.setFont(new Font("Roboto", Font.PLAIN, 17));
 		lblNewLabel_3_2.setBounds(312, 520, 295, 27);
 		contentPane.add(lblNewLabel_3_2);
+		
+		JLabel lblNewLabel_3_3 = new JLabel("- Administrar y crear los usuarios");
+		if (!usuario.getTipo().equals("Administrador")) {
+			lblNewLabel_3_3.setVisible(false);
+		}
+		lblNewLabel_3_3.setFont(new Font("Roboto", Font.PLAIN, 17));
+		lblNewLabel_3_3.setBounds(312, 558, 295, 27);
+		contentPane.add(lblNewLabel_3_3);
 	}
 
 	private void headerMousePressed(java.awt.event.MouseEvent evt) {

@@ -322,8 +322,6 @@ public class Administrador extends JFrame {
 			this.usuarioController.guardar(usuario);
 			JOptionPane.showMessageDialog(null, "El usuario se creó correctamente.");
 			dispose();
-			MenuUsuario menuUsuario = new MenuUsuario();
-			menuUsuario.setVisible(true);
 			limpiarFormulario();
 		} catch (UsuarioExistenteException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
