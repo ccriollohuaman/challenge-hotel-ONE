@@ -101,7 +101,7 @@ public class ConfirmacionFechasReserva extends JDialog {
 				String.format("Tu número de reserva es %d, lo verás a continuación", reserva.getId()));
 		reservasView.dispose();
 		dispose();
-		RegistroHuesped registroHuesped = new RegistroHuesped();
+		RegistroHuesped registroHuesped = new RegistroHuesped(reserva.getId(), fechaEntrada, fechaSalida);
 		registroHuesped.setVisible(true);
 
 	}
