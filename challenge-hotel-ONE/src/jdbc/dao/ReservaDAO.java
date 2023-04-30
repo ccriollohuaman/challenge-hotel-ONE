@@ -11,8 +11,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import jdbc.common.test.ContadorConexiones;
 import jdbc.model.Reserva;
-import jdbc.test.ContadorConexiones;
 
 
 public class ReservaDAO {

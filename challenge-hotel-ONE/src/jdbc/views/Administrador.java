@@ -22,8 +22,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import jdbc.common.exception.UsuarioExistenteException;
 import jdbc.controller.UsuarioController;
-import jdbc.exception.UsuarioExistenteException;
 import jdbc.model.Usuario;
 
 public class Administrador extends JFrame {

@@ -1,4 +1,4 @@
-package jdbc.exception;
+package jdbc.common.exception;
 
 public class UsuarioExistenteException extends Exception {
 	

@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import jdbc.common.test.ContadorConexiones;
 import jdbc.model.Usuario;
-import jdbc.test.ContadorConexiones;
 
 public class LoginDAO {
 

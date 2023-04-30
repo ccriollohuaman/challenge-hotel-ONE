@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import jdbc.exception.UsuarioExistenteException;
+import jdbc.common.exception.UsuarioExistenteException;
+import jdbc.common.test.ContadorConexiones;
 import jdbc.model.Usuario;
-import jdbc.test.ContadorConexiones;
 
 public class UsuarioDAO {
 

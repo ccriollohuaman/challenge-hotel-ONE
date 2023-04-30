@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import jdbc.common.vstatic.Sistema;
 import jdbc.controller.LoginController;
-import jdbc.vstatic.Sistema;
 
 import java.awt.Color;
 import java.awt.Cursor;

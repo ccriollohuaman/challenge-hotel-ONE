@@ -9,8 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+
+import jdbc.common.test.ContadorConexiones;
 import jdbc.model.Huesped;
-import jdbc.test.ContadorConexiones;
 
 public class HuespedDAO {
 

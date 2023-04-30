@@ -1,4 +1,4 @@
-package jdbc.vstatic;
+package jdbc.common.vstatic;
 
 import jdbc.model.Usuario;
 

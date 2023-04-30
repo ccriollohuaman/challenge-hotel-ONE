@@ -1,7 +1,7 @@
 package jdbc.controller;
 
+import jdbc.common.exception.UsuarioExistenteException;
 import jdbc.dao.UsuarioDAO;
-import jdbc.exception.UsuarioExistenteException;
 import jdbc.factory.ConnectionFactory;
 import jdbc.model.Usuario;
 

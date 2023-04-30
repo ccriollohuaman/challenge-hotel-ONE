@@ -1,4 +1,4 @@
-package jdbc.test;
+package jdbc.common.test;
 
 public class ContadorConexiones {
 	
