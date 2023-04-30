@@ -18,9 +18,7 @@ public class LoginController {
 
 	public Usuario autentica(String usuario, char[] contrasena) {
 		Usuario resultado = loginDAO.autentica(usuario, contrasena);
-		System.out.println(contrasena);
 	    Arrays.fill(contrasena, '\0');
-	    System.out.println(contrasena);
 	    return resultado;
 	}
 

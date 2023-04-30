@@ -26,7 +26,6 @@ public class ReservaController {
 		long diferenciaFechas = fechaSalida.getTime() - fechaEntrada.getTime();
 		Integer diferenciaDias = (int) (diferenciaFechas / (24 * 60 * 60 * 1000));
 		Float valorReserva = diferenciaDias * valorDiario;
-		String valorReservaString = String.valueOf(valorReserva);
 		return String.valueOf(valorReserva);
 	}
 
