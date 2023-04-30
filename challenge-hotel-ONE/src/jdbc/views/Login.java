@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import jdbc.controller.LoginController;
+import jdbc.vstatic.Sistema;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -247,7 +248,7 @@ public class Login extends JFrame {
 	    if (usuario == null) {
 	        JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
 	    } else {
-
+	        Sistema.usuarioAutenticado = usuario;
 	        MenuUsuario menu = new MenuUsuario();
 	        menu.setVisible(true);
 	        dispose();     
